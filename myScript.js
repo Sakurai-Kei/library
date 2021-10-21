@@ -4,6 +4,10 @@ function Book() {
   // the constructor...
 }
 
-function addBookToLibrary() {
-  // do stuff here
+function addBookToLibrary(title,author,page,status) {
+  this.title = title;
+  this.author = author;
+  this.page = page;
+  this.status = status;
 }
+
