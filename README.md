@@ -1,5 +1,5 @@
 <h1>Project: Library for Javascript course TOP</h1>
-<p><br>Goals:</p>
+<h2><br>Goals:</h2>
 <p>1) Allow user to add new books into library<br>
 2) Let user view a list of books registered<br>
 3) Allow user to remove book from the library<br>

@@ -5,7 +5,6 @@ body {
     color: snow;
 }
 
-  
 
 #container {
     display: flex;
@@ -39,7 +38,7 @@ body {
 #buttonArea {
     display: flex;
     justify-content: flex-end;
-    margin-right: 2%;
+    margin-right: 1%;
 }
 
 #footer {
@@ -49,16 +48,17 @@ body {
 }
 
 
-#add {
+#add , #remove {
     height: 5vh;
     width: 5vh;
     font-size: large;
     border-radius: 50%;
     border-color: slateblue;
     transition: all 1.2s ease;
+    margin: 0.5%;
 }
 
-#add:hover, .book:hover{
+#add:hover, .book:hover, #remove:hover{
     border-color: darkslateblue;
     transform: scale(1.3);
 }

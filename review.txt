@@ -1,0 +1,20 @@
+What does this web do?
+-It lets users to save information about a book using objects. The website
+    then display the books information. User can also delete books saved. Ideally, 
+    data can be stored either locally or cloud.
+
+Problems encountered?
+-(Problems will be listed here, alongside with how I problem solve them)
+
+Check-list
+
+-3 major button. Log in, Add, Remove
+-A minor button on each book to change read status.
+-Add button will ask user the title, author, page and readStatus.
+    After confirmation, will update the list.
+-Remove button allow user to click the books on the list. Clicked books will have
+    their border color changed to let user see their input. Upon confirmation, books
+    that are highlighted with a certain colour will be deleted from both lists
+    and memory.
+-Log in button allows user to save their data on cloud.
+-Data is saved locally by default
