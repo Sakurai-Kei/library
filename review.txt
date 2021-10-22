@@ -5,6 +5,7 @@ What does this web do?
 
 Problems encountered?
 -(Problems will be listed here, alongside with how I problem solve them)
+-I forgot to link the script file and wondered for an hour why my script wasn't working
 
 Check-list
 

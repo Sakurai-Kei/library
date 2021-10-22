@@ -11,3 +11,12 @@ function addBookToLibrary(title,author,page,status) {
   this.status = status;
 }
 
+const inputPop = document.getElementById('add');
+inputPop.addEventListener('click', () => {
+  document.getElementById('input').style.display = 'flex';
+})
+
+const inputHide = document.getElementById('cancel');
+inputHide.addEventListener('click', () => {
+  document.getElementById('input').style.display = 'none'
+})
