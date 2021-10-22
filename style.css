@@ -37,6 +37,7 @@ body {
     border: 4px solid slateblue;
     border-radius: 20px;
     margin: 2%;
+    padding: 1%;
     transition: all 1s ease;
     /* background-image: url("purple.jpg"); */
 }
@@ -55,10 +56,20 @@ body {
     margin-right: 1%;
 }
 
-#input {
+#inputHidden {
     display: none;
-    justify-content: flex-end;
-    margin-right: 1%;
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+}
+
+#input {
+    display: flex;
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
 }
 
 #footer {
@@ -80,7 +91,7 @@ body {
 
 #add:hover, #remove:hover{
     border-color: darkslateblue;
-    transform: scale(1.3);
+    transform: scale(1.5);
 }
 
 .book:hover {

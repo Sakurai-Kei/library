@@ -13,10 +13,10 @@ function addBookToLibrary(title,author,page,status) {
 
 const inputPop = document.getElementById('add');
 inputPop.addEventListener('click', () => {
-  document.getElementById('input').style.display = 'flex';
+  document.getElementById('inputHidden').setAttribute('id', 'input');
 })
 
 const inputHide = document.getElementById('cancel');
 inputHide.addEventListener('click', () => {
-  document.getElementById('input').style.display = 'none'
+  document.getElementById('input').setAttribute('id', 'inputHidden');
 })
