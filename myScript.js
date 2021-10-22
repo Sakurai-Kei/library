@@ -11,12 +11,17 @@ function addBookToLibrary(title,author,page,status) {
   this.status = status;
 }
 
-const inputPop = document.getElementById('add');
-inputPop.addEventListener('click', () => {
+function openForm() {
   document.getElementById('inputHidden').setAttribute('id', 'input');
-})
+}
+
+function closeForm() {
+  document.getElementById('input').setAttribute('id', 'inputHidden');
+
+}
+
+const inputPop = document.getElementById('add');
+inputPop.addEventListener('click', openForm)
 
 const inputHide = document.getElementById('cancel');
-inputHide.addEventListener('click', () => {
-  document.getElementById('input').setAttribute('id', 'inputHidden');
-})
+inputHide.addEventListener('click', closeForm)
