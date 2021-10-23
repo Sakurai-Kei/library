@@ -26,49 +26,26 @@
                 <div>Page</div>
                 <div>Status</div>
             </div>
-            <div class="book read">
-                <h1>Harry Potter and Whatever Long Title to put here</h1>
-                <h3>I EFF Forgot</h3>
-                <div>420 Pages</div>
-                <div>Status</div>
-            </div>
-            <div class="book notRead">
-                <h1>Title</h1>
-                <h3>Author</h3>
-                <div>Page</div>
-                <div>Status</div>
-            </div>
-            <div class="book read">
-                <h1>Harry Potter and Whatever Long Title to put here</h1>
-                <h3>I EFF Forgot</h3>
-                <div>420 Pages</div>
-                <div>Status</div>
-            </div>
-            <div class="book notRead">
-                <h1>Title</h1>
-                <h3>Author</h3>
-                <div>Page</div>
-                <div>Status</div>
-            </div>
         </div>
         <div id="modal">
             <div id="input">
-                <form>
-                    <label>Book Title</label><br>
-                    <input placeholder="Enter Book Title"><br>
-                    <label>Author</label><br>
-                    <input placeholder="Enter Author"><br>
-                    <label>Page Number</label><br>
-                    <input placeholder="Enter Page Number"><br>
-                    <label>Have you read the book?</label><br>
-                    <select>
-                        <option>--Please Choose--</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </select>
-                    <br><br><button id="cancel">Cancel</button>
-                    <button>Submit</button>
-                </form>
+                <label>Book Title</label><br>
+                <input type="text" id="title" placeholder="Enter Book Title"><br>
+                <label>Author</label><br>
+                <input type="text" id="author" placeholder="Enter Author"><br>
+                <label>Page Number</label><br>
+                <input type="text" id="page" placeholder="Enter Page Number"><br>
+                <label>Have you read the book?</label><br>
+                <select id="readStatus">
+                    <option>--Please Choose--</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                <br>
+                <div id="buttonContainer">
+                    <button id="cancel">Cancel</button>
+                    <button id="submit">Submit</button>
+                </div>
             </div>
         </div>
         <div id="buttonArea">
