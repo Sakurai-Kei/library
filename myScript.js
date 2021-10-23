@@ -12,7 +12,7 @@ function addBookToLibrary(title,author,page,status) {
 }
 
 function openForm() {
-  document.getElementById('modal').style.display = 'block';
+  document.getElementById('modal').style.display = 'flex';
 }
 
 function closeForm() {
