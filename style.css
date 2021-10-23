@@ -7,7 +7,6 @@ body {
     width: 100vw;
 }
 
-
 #container {
     display: flex;
     height: 100%;
@@ -57,20 +56,27 @@ body {
     margin-right: 1%;
 }
 
-#inputHidden {
+#modal {
     display: none;
     position: fixed;
+    z-index: 1;
     left: 50vw;
     top: 50vh;
     transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
 }
 
 #input {
     display: flex;
-    position: fixed;
-    left: 50vw;
-    top: 50vh;
-    transform: translate(-50%, -50%);
+    justify-content: center;
+    color: black;
+    background-color: slateblue;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
 }
 
 #footer {

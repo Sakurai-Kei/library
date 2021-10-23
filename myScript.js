@@ -12,12 +12,11 @@ function addBookToLibrary(title,author,page,status) {
 }
 
 function openForm() {
-  document.getElementById('inputHidden').setAttribute('id', 'input');
+  document.getElementById('modal').style.display = 'block';
 }
 
 function closeForm() {
-  document.getElementById('input').setAttribute('id', 'inputHidden');
-
+  document.getElementById('modal').style.display = 'none';
 }
 
 const inputPop = document.getElementById('add');
