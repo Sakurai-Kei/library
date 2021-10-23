@@ -44,7 +44,6 @@ function displayBook() {
   else if(i => 0){
     i++;
   }
-  console.log(i);
   for(; i < myLibrary.length; i++){
     const div = document.createElement('div');
     div.classList.add('book');
@@ -66,28 +65,6 @@ function displayBook() {
     bookContainer.appendChild(h1);
     bookContainer.appendChild(h3);
     bookContainer.appendChild(divPage);
-  // myLibrary.forEach(book => {
-  //   const div = document.createElement('div');
-  //   div.classList.add('book');
-  //   const bookContainer = screen.appendChild(div);
-  //   const h1 = document.createElement('h1');
-  //   const h3 = document.createElement('h3');
-  //   const divPage = document.createElement('div');
-  //   h1.textContent = book.title;
-  //   h3.textContent = book.author;
-  //   divPage.textContent = `${book.page} pages`;
-  //   switch(book.readStatus){
-  //     case "Yes":
-  //       div.classList.add('read');
-  //       break;
-  //     case "No":
-  //       div.classList.add('notRead');
-  //       break;  
-  //   }
-    // bookContainer.appendChild(h1);
-    // bookContainer.appendChild(h3);
-    // bookContainer.appendChild(divPage);
-  // })
   }
 }
 
