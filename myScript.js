@@ -8,7 +8,7 @@ function addBookToLibrary(title,author,page,readStatus) {
   this.title = title;
   this.author = author;
   this.page = page;
-  this.status = status;
+  this.readStatus = readStatus;
 }
 
 function openForm() {
@@ -20,6 +20,13 @@ function closeForm() {
 }
 
 function resetForm() {
+  const inputForm = Array.from(document.querySelectorAll('input'));
+  inputForm.forEach(input => {
+    input.value = "";
+  })
+}
+
+function displayBook() {
   
 }
 
@@ -28,10 +35,15 @@ function addBook() {
   const author = document.getElementById('author').value;
   const page = document.getElementById('page').value;
   const readStatus = document.getElementById('readStatus').value;
-  console.log(title);
-  console.log(author);
-  console.log(page);
-  console.log(readStatus);
+  const book = new addBookToLibrary(title,author,page,readStatus);
+  myLibrary.push(book);
+  console.table(book);
+  console.log(myLibrary);
+  // console.log(title);
+  // console.log(author);
+  // console.log(page);
+  // console.log(readStatus);
+  resetForm();
   closeForm();
 }
 

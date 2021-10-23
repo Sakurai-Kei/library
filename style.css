@@ -73,9 +73,9 @@ body {
 #input {
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     color: black;
+    font-size: large;
     background-color: slateblue;
     margin: auto;
     padding: 20px;
