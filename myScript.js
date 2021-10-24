@@ -68,6 +68,27 @@ function displayBook() {
   }
 }
 
+function removeStart() {
+  const removeState = document.getElementById('remove');
+  removeState.setAttribute('id', 'removeOn');
+  const bookList = Array.from(document.querySelectorAll('.book'));
+  bookList.forEach(div => {
+    div.addEventListener('click', ()=> {
+      div.classList.toggle('highlighted');
+    })
+  })
+  removeState.addEventListener('click', () => {
+    const toBeRemoved = Array.from(document.querySelectorAll('.highlighted'));
+    removeState.addEventListener('click', () => {
+      toBeRemoved.forEach(highlighted => {
+        document.getElementById('bookList').removeChild(highlighted)
+      })
+      removeState.setAttribute('id', 'remove');
+    })
+  })
+  console.log('ends')
+}
+
 const inputPop = document.getElementById('add');
 inputPop.addEventListener('click', openForm)
 
@@ -76,3 +97,6 @@ inputHide.addEventListener('click', closeForm)
 
 const submit = document.getElementById('submit');
 submit.addEventListener('click', addBookToLibrary);
+
+const remove = document.getElementById('remove');
+remove.addEventListener('click', removeStart);

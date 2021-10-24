@@ -51,6 +51,11 @@ body {
     background-color: red;
 }
 
+.highlighted {
+    border-color: orangered;
+    transform: scale(1.1);
+}
+
 #buttonArea {
     display: flex;
     justify-content: flex-end;
@@ -96,7 +101,7 @@ body {
 }
 
 
-#add , #remove {
+#add , #remove, #removeOn {
     height: 5vh;
     width: 5vh;
     font-size: large;
@@ -106,7 +111,7 @@ body {
     margin: 0.5%;
 }
 
-#add:hover, #remove:hover{
+#add:hover, #remove:hover, #removeOn{
     border-color: darkslateblue;
     transform: scale(1.5);
 }
