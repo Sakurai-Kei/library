@@ -1,22 +1,26 @@
 let myLibrary = [];
 
-function Book(title,author,page,readStatus) {
-  this.title = title;
-  this.author = author;
-  this.page = page;
-  this.readStatus = readStatus;
+function Book(bookValueArray) {
+  this.title = bookValueArray[0];
+  this.author = bookValueArray[1];
+  this.page = bookValueArray[2];
+  this.readStatus = bookValueArray[3];
 }
 
 function addBookToLibrary() {
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
-  const page = document.getElementById('page').value;
-  const readStatus = document.getElementById('readStatus').value;
-  const book = new Book(title,author,page,readStatus);
+  const book = new Book(getBookValue());
   myLibrary.push(book);
   resetForm();
   closeForm();
   displayBook();
+}
+
+function getBookValue(){
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const page = document.getElementById('page').value;
+  const readStatus = document.getElementById('readStatus').value;
+  return [title,author,page,readStatus];
 }
 
 function openForm() {

@@ -6,6 +6,21 @@ What does this web do?
 Problems encountered?
 -(Problems will be listed here, alongside with how I problem solve them)
 -I forgot to link the script file and wondered for an hour why my script wasn't working
+-Having trouble with making the modal window where I could not position it in the middle.
+    First attempt to fix it was to make it positioned in the middle but it made the
+    bottom half of the modal window dim while the uppder half looks normal. Second attempt
+    is by simply declaring flex display instead of block.
+-Input field not resetting after submit. This is solved by declaring textContent of the
+    field to be "" so the placeholder would appear.
+-I have problem when trying to solve the problem of deleting object in myLibrary.
+    I went through the long way, extracting the selected book from myLibrary, then attempted
+    find the index of it in myLibrary. It took me a while that I
+    do not have to do this. Instead, I solved it by simply applying
+    filter() method with !== condition, which then declare myLibrary = array produced
+    from filter method, therefore the new myLibrary is now whatever book which was
+    not selected.
+-User were able to choose which book to delete even though the function has ended.
+
 
 Check-list
 
