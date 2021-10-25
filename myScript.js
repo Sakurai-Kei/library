@@ -12,6 +12,7 @@ function addBookToLibrary() {
   myLibrary.push(book);
   resetForm();
   closeForm();
+  initialiseBookListArea();
   displayBook();
   changeReadStatus();
 }
@@ -85,7 +86,6 @@ function initialiseBookListArea(){
 }
 
 function displayBook() {
-  initialiseBookListArea();
   let i = startFrom();
   for(; i < myLibrary.length; i++){
     createBookCard(i);
@@ -144,6 +144,7 @@ function removeEnd() {
   hideConfirmButton();
   enableButtons();
   updateLibraryObject();
+  initialiseBookListArea();
   displayBook();
   changeReadStatus();
 }
@@ -164,6 +165,7 @@ function changeReadStatus() {
           } 
         } 
       }) 
+      initialiseBookListArea();
       displayBook();
       changeReadStatus();
     }) 
