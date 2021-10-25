@@ -79,9 +79,13 @@ function startFrom() {
   return i;
 }
 
-function displayBook() {
+function initialiseBookListArea(){
   const bookListParent = document.getElementById('bookList');
   bookListParent.textContent = "";
+}
+
+function displayBook() {
+  initialiseBookListArea();
   let i = startFrom();
   for(; i < myLibrary.length; i++){
     createBookCard(i);
@@ -108,6 +112,8 @@ function selectBook() {
 }
 
 function removeStart() {
+  initialiseBookListArea();
+  displayBook();
   showConfirmButton();
   disableButtons();
   selectBook();
@@ -148,6 +154,7 @@ function removeEnd() {
   enableButtons();
   updateLibraryObject();
   preventHighlight();
+  changeReadStatus();
 }
 
 function changeReadStatus() {
