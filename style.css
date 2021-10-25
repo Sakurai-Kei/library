@@ -111,7 +111,18 @@ body {
     margin: 0.5%;
 }
 
-#add:hover, #remove:hover, #removeOn{
+#confirm {
+    display: none;
+    height: 5vh;
+    width: 5vh;
+    font-size: large;
+    border-radius: 50%;
+    border-color: slateblue;
+    transition: all 1s ease;
+    margin: 0.5%;
+}
+
+#add:hover, #remove:hover, #removeOn, #confirm:hover{
     border-color: darkslateblue;
     transform: scale(1.5);
 }

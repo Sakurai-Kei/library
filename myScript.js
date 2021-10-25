@@ -69,24 +69,30 @@ function displayBook() {
 }
 
 function removeStart() {
-  const removeState = document.getElementById('remove');
-  removeState.setAttribute('id', 'removeOn');
+  const confirm = document.getElementById('confirm');
+  confirm.style.display = "block";
+  inputPop.disabled = true;
+  remove.disabled = true;
   const bookList = Array.from(document.querySelectorAll('.book'));
   bookList.forEach(div => {
     div.addEventListener('click', ()=> {
       div.classList.toggle('highlighted');
     })
   })
-  removeState.addEventListener('click', () => {
-    const toBeRemoved = Array.from(document.querySelectorAll('.highlighted'));
-    removeState.addEventListener('click', () => {
-      toBeRemoved.forEach(highlighted => {
-        document.getElementById('bookList').removeChild(highlighted)
-      })
-      removeState.setAttribute('id', 'remove');
-    })
+}
+
+function removeEnd() {
+  const confirm = document.getElementById('confirm');
+  confirm.style.display = "none";
+  remove.disabled = false;
+  inputPop.disabled =false;
+
+  const toBeRemoved = Array.from(document.querySelectorAll('.highlighted'));
+  const toBeRemovedParent = document.getElementById('bookList');
+  console.log(toBeRemoved);
+  toBeRemoved.forEach(highlighted => {
+    toBeRemovedParent.removeChild(highlighted);
   })
-  console.log('ends')
 }
 
 const inputPop = document.getElementById('add');
@@ -100,3 +106,6 @@ submit.addEventListener('click', addBookToLibrary);
 
 const remove = document.getElementById('remove');
 remove.addEventListener('click', removeStart);
+
+const deleteBooks = document.getElementById('confirm');
+deleteBooks.addEventListener('click', removeEnd);
