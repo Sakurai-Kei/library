@@ -85,25 +85,42 @@ function displayBook() {
   }
 }
 
-function removeStart() {
+function showConfirmButton() {
   const confirm = document.getElementById('confirm');
   confirm.style.display = "block";
+}
+
+function disableButtons() {
   inputPop.disabled = true;
   remove.disabled = true;
+}
+
+function selectBook() {
   const bookList = Array.from(document.querySelectorAll('.book'));
   bookList.forEach(div => {
-    div.addEventListener('click', ()=> {
+    div.addEventListener('click', () => {
       div.classList.toggle('highlighted');
     })
   })
 }
 
-function removeEnd() {
+function removeStart() {
+  showConfirmButton();
+  disableButtons();
+  selectBook();
+}
+
+function hideConfirmButton() {
   const confirm = document.getElementById('confirm');
   confirm.style.display = "none";
+}
+
+function enableButtons() {
   remove.disabled = false;
   inputPop.disabled =false;
+}
 
+function updateLibraryObject() {
   const toBeRemoved = Array.from(document.querySelectorAll('.highlighted'));
   const toBeRemovedParent = document.getElementById('bookList');
   console.log(toBeRemoved);
@@ -113,6 +130,21 @@ function removeEnd() {
     const removeTitleFromObject = myLibrary.filter(book => book.title !== removeTitle);
     myLibrary = removeTitleFromObject;
   })
+}
+
+function preventHighlight() {
+  // Because somehow, I cannot make removeEventLister work.
+  // Attempting to use named function instead result in weird behaviour during removeStart()
+  const oldBookCards = document.getElementById('bookList');
+  const newBookCards = oldBookCards.cloneNode(true);
+  oldBookCards.parentNode.replaceChild(newBookCards, oldBookCards);
+}
+
+function removeEnd() {
+  hideConfirmButton();
+  enableButtons();
+  updateLibraryObject();
+  preventHighlight();
 }
 
 const inputPop = document.getElementById('add');
