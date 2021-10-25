@@ -140,20 +140,11 @@ function updateLibraryObject() {
   })
 }
 
-function preventHighlight() {
-  // Because somehow, I cannot make removeEventLister work.
-  // Attempting to use named function instead result in weird behaviour during removeStart()
-  // I'll fix this later if I have new ideas for this.
-  const oldBookCards = document.getElementById('bookList');
-  const newBookCards = oldBookCards.cloneNode(true);
-  oldBookCards.parentNode.replaceChild(newBookCards, oldBookCards);
-}
-
 function removeEnd() {
   hideConfirmButton();
   enableButtons();
   updateLibraryObject();
-  preventHighlight();
+  displayBook();
   changeReadStatus();
 }
 
@@ -170,14 +161,13 @@ function changeReadStatus() {
               break;
             case "No":
               book.readStatus = "Yes"
-          } // End of Switch
-        } // End of if
-      }) // End of myLibrary.forEach
+          } 
+        } 
+      }) 
       displayBook();
       changeReadStatus();
-      console.table(myLibrary);
-    }) // End of addEventListener
-  }) // End of bookList.forEach
+    }) 
+  }) 
 }
 
 const inputPop = document.getElementById('add');
