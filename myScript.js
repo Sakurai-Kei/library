@@ -92,6 +92,9 @@ function removeEnd() {
   console.log(toBeRemoved);
   toBeRemoved.forEach(highlighted => {
     toBeRemovedParent.removeChild(highlighted);
+    const removeTitle = highlighted.querySelector('h1').textContent;
+    const removeTitleFromObject = myLibrary.filter(book => book.title !== removeTitle);
+    myLibrary = removeTitleFromObject;
   })
 }
 
