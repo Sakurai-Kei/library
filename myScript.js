@@ -13,6 +13,7 @@ function addBookToLibrary() {
   resetForm();
   closeForm();
   displayBook();
+  changeReadStatus();
 }
 
 function getBookValue(){
@@ -79,6 +80,8 @@ function startFrom() {
 }
 
 function displayBook() {
+  const bookListParent = document.getElementById('bookList');
+  bookListParent.textContent = "";
   let i = startFrom();
   for(; i < myLibrary.length; i++){
     createBookCard(i);
@@ -123,7 +126,6 @@ function enableButtons() {
 function updateLibraryObject() {
   const toBeRemoved = Array.from(document.querySelectorAll('.highlighted'));
   const toBeRemovedParent = document.getElementById('bookList');
-  console.log(toBeRemoved);
   toBeRemoved.forEach(highlighted => {
     toBeRemovedParent.removeChild(highlighted);
     const removeTitle = highlighted.querySelector('h1').textContent;
@@ -135,6 +137,7 @@ function updateLibraryObject() {
 function preventHighlight() {
   // Because somehow, I cannot make removeEventLister work.
   // Attempting to use named function instead result in weird behaviour during removeStart()
+  // I'll fix this later if I have new ideas for this.
   const oldBookCards = document.getElementById('bookList');
   const newBookCards = oldBookCards.cloneNode(true);
   oldBookCards.parentNode.replaceChild(newBookCards, oldBookCards);
@@ -145,6 +148,29 @@ function removeEnd() {
   enableButtons();
   updateLibraryObject();
   preventHighlight();
+}
+
+function changeReadStatus() {
+  const bookList = Array.from(document.querySelectorAll('.book'));
+  bookList.forEach(div => {
+    div.addEventListener('click', () => {
+      const divTitle = div.querySelector('h1').textContent;
+      myLibrary.forEach(book => {
+        if(divTitle === book.title){
+          switch(book.readStatus){
+            case "Yes":
+              book.readStatus = "No";
+              break;
+            case "No":
+              book.readStatus = "Yes"
+          } // End of Switch
+        } // End of if
+      }) // End of myLibrary.forEach
+      displayBook();
+      changeReadStatus();
+      console.table(myLibrary);
+    }) // End of addEventListener
+  }) // End of bookList.forEach
 }
 
 const inputPop = document.getElementById('add');
