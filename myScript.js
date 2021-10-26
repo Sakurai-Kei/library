@@ -31,7 +31,7 @@ function getBookValue(){
   const readStatus = document.getElementById('readStatus').value;
   console.log(page);
   console.log(typeof page);
-  if(title == "" | author == "" | page == 0 | typeof page != "number" | readStatus == ""){
+  if(title == "" | author == "" | page <= 0 | typeof page != "number" | readStatus == ""){
     return false;
   }
   return [title,author,page,readStatus];
