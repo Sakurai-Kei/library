@@ -15,6 +15,7 @@ function addBookToLibrary() {
   initialiseBookListArea();
   displayBook();
   changeReadStatus();
+  storeData();
 }
 
 function getBookValue(){
@@ -147,6 +148,7 @@ function removeEnd() {
   initialiseBookListArea();
   displayBook();
   changeReadStatus();
+  storeData();
 }
 
 function changeReadStatus() {
@@ -168,6 +170,7 @@ function changeReadStatus() {
       initialiseBookListArea();
       displayBook();
       changeReadStatus();
+      storeData();
     }) 
   }) 
 }
@@ -206,6 +209,27 @@ else {
   console.log("Not Supported")
 }
 
+function storeData() {
+  localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+}
+
+function retriveData() {
+  myLibrary = JSON.parse(localStorage.getItem("myLibrary"))
+  if(myLibrary === null){
+    myLibrary = [];
+    console.log(`No Stored Data from previos sessions`);
+  }
+  else{
+    initialiseBookListArea();
+    displayBook();
+    changeReadStatus();
+  }
+}
+
+function removeData() {
+  localStorage.removeItem("myLibrary");
+}
+
 const inputPop = document.getElementById('add');
 inputPop.addEventListener('click', openForm)
 
@@ -220,3 +244,5 @@ remove.addEventListener('click', removeStart);
 
 const deleteBooks = document.getElementById('confirm');
 deleteBooks.addEventListener('click', removeEnd);
+
+retriveData();
