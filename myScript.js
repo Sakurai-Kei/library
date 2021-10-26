@@ -202,28 +202,38 @@ function storageAvailable(type) {
 
 if (storageAvailable('localStorage')) {
   // Yippee! We can use localStorage awesomeness
-  console.log("Supported")
+  console.log("localStorage is Supported")
 }
 else {
   // Too bad, no localStorage for us
-  console.log("Not Supported")
+  console.log("localStorage is Not Supported")
 }
 
 function storeData() {
   localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 }
 
-function retriveData() {
-  myLibrary = JSON.parse(localStorage.getItem("myLibrary"))
+function isDataAvailable() {
   if(myLibrary === null){
     myLibrary = [];
     console.log(`No Stored Data from previos sessions`);
   }
+  else if(myLibrary.length === 0){
+    console.log(`Leftover Empty Object Detected. Clearing localStorage`);
+    removeData();
+  }
   else{
+    console.log(`Stored Data Found. Restoring Data`);
     initialiseBookListArea();
     displayBook();
     changeReadStatus();
   }
+
+}
+
+function retriveData() {
+  myLibrary = JSON.parse(localStorage.getItem("myLibrary"))
+  isDataAvailable();
 }
 
 function removeData() {
