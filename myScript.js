@@ -8,7 +8,13 @@ function Book(bookValueArray) {
 }
 
 function addBookToLibrary() {
-  const book = new Book(getBookValue());
+  const bookValueArray = getBookValue();
+  if(bookValueArray == false){
+    resetForm();
+    closeForm();
+    return alert(`One or more input is wrong/empty. Please made sure that all field are entered and page number field is actually an integer number`);
+  }
+  const book = new Book(bookValueArray);
   myLibrary.push(book);
   resetForm();
   closeForm();
@@ -21,8 +27,13 @@ function addBookToLibrary() {
 function getBookValue(){
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  const page = document.getElementById('page').value;
+  const page = Number(document.getElementById('page').value);
   const readStatus = document.getElementById('readStatus').value;
+  console.log(page);
+  console.log(typeof page);
+  if(title == "" | author == "" | page == 0 | typeof page != "number" | readStatus == ""){
+    return false;
+  }
   return [title,author,page,readStatus];
 }
 
