@@ -11,7 +11,7 @@
 <body>
     <div id="container">
         <div id="header">
-            Header Area
+            <div id="library"><img src="3x.gif" id="noted" alt="noted twitch emote">LIBRARY</div>
         </div>
         <div id="bookList"></div>
         <div id="modal">
@@ -35,12 +35,49 @@
                 </div>
             </div>
         </div>
+        <div id="modalTutorial">
+            <div id="tutorialContent">
+                <div>
+                    <div id="tutoHeader">
+                        <h1>Welcome</h1>
+                        <button id="exit">X</button>
+                    </div>
+                    <p>The purpose of this web is to keep track of books that you read.</p>
+                    <p>
+                        As user, you can input book details such as title, author, page number
+                        and read status. To input one book, please click on the add
+                        button on the bottom right.
+                    </p>
+                    <p>
+                        After submitting one book, the web will show the list of book
+                        in "cards". There will be two background color for these cards.
+                        Green indicates you have read the book while red means you have not.
+                        User may change their read status simply by clicking the cards.
+                    </p>
+                    <p>
+                        User may remove their entry. To do so, start by clicking the remove
+                        button on the bottom right. User will then enter book selection
+                        mode, where user can click the cards to select which books to delete.
+                        User may delete multiple book at a time. Chosen books will be highlighted
+                        on their card border. Once user have finished, simply click the check mark
+                        button on bottom right to confirm deletion.
+                    </p>
+                    <p>
+                        Finally, the web supports localStorage. Upon submitting, removing or changing
+                        read status, the changes will be saved. User will not lose their record upon
+                        refreshing the web page.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
         <div id="buttonArea">
+            <button id="tutorial">!</button>
             <button id="confirm">✓</button>
             <button id="remove">-</button>
             <button id="add">+</button>
         </div>
-        <div id="footer">Footer Area</div>
+        <div id="footer">Copyright &copy; 2021 Sakurai-Kei</div>
     </div>
 </body>
 </html>

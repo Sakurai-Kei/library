@@ -29,8 +29,6 @@ function getBookValue(){
   const author = document.getElementById('author').value;
   const page = Number(document.getElementById('page').value);
   const readStatus = document.getElementById('readStatus').value;
-  console.log(page);
-  console.log(typeof page);
   if(title == "" | author == "" | page <= 0 | typeof page != "number" | readStatus == ""){
     return false;
   }
@@ -251,6 +249,15 @@ function removeData() {
   localStorage.removeItem("myLibrary");
 }
 
+function tutorialStart() {
+  document.getElementById('modalTutorial').style.display = 'flex';
+}
+
+function tutorialEnd() {
+  document.getElementById('modalTutorial').style.display = 'none';
+
+}
+
 const inputPop = document.getElementById('add');
 inputPop.addEventListener('click', openForm)
 
@@ -265,5 +272,11 @@ remove.addEventListener('click', removeStart);
 
 const deleteBooks = document.getElementById('confirm');
 deleteBooks.addEventListener('click', removeEnd);
+
+const tutorial = document.getElementById('tutorial');
+tutorial.addEventListener('click', tutorialStart);
+
+const exitTutorial = document.getElementById('exit');
+exitTutorial.addEventListener('click', tutorialEnd);
 
 retriveData();
